@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+*.log
+debug.out.log
+debug.err.log
+detached.out.log
+detached.err.log
+streamlit.out.log
+streamlit.err.log
