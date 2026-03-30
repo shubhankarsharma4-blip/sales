@@ -19,7 +19,9 @@ body {
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv('sales_dashboard_dataset.csv')
+    import os
+    csv_path = os.path.join(os.path.dirname(__file__), 'sales_dashboard_dataset.csv')
+    df = pd.read_csv(csv_path)
     df['Date'] = pd.to_datetime(df['Date'], format='%d-%m-%Y')
     df['Profit'] = df['Revenue'] - df['Cost']
     df['Profit_Margin'] = (df['Profit'] / df['Revenue'] * 100).round(2)
